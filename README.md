@@ -15,6 +15,36 @@ The Advanced Password Generator provides a sleek, user-friendly interface for cr
 - Styling: `Vanilla CSS3`
 - Logic: `ES6 JavaScript`
 
+## 🏗 System Architecture
+
+The tool operates entirely on the client-side, utilizing cryptographically secure logic to ensure user privacy.
+
+```mermaid
+graph TD
+    User([User]) -- Select Criteria --> UI[HTML/CSS Interface]
+    UI -- Trigger Logic --> Engine[JS Generation Engine]
+    
+    subgraph Logic_Layer [Local Generation]
+    Engine -- Random Selection --> CharPool[Character Pool: A-z, 0-9, !@#]
+    CharPool -- Shuffle & Slice --> Result[Generated Password]
+    end
+    
+    Result -- Display --> UI
+    UI -- Copy to Clipboard --> Clipboard[System Clipboard]
+    
+    style Logic_Layer fill:#f0fdf4,stroke:#22c55e,stroke-width:2px
+    style UI fill:#eff6ff,stroke:#2563eb,stroke-width:2px
+```
+
+## 📂 File Structure
+```text
+password-generator/
+├── index.html     # Semantic structure and glassmorphic layout
+├── style.css      # Custom CSS3 variables and layout logic
+├── script.js      # Core entropy logic and clipboard handlers
+└── README.md      # Project documentation
+```
+
 ## 🚀 Getting Started
 This application is a standalone frontend tool. No installation is required.
 
@@ -36,3 +66,5 @@ open index.html
 
 ## 👨‍💻 Developer
 **Kartik Shete**
+
+<!-- Doc sync 0 -->
