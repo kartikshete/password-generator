@@ -125,3 +125,5 @@ themeToggleBtn.addEventListener('click', () => {
 
 // Init
 generatePassword();
+
+// Logic update 7
