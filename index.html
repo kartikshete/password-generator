@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator | Secure & Advanced 🔐</title>
+    <meta name="description"
+        content="Generate ultra-secure, unhackable passwords with our Advanced Password Generator. Featuring glassmorphism UI, strength analysis, and instant clipboard copy.">
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;900&family=JetBrains+Mono:wght@500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="bg-animate"></div>
+
+    <main class="main-container">
+        <header class="header">
+            <div class="header-top">
+                <h1>Password Generator</h1>
+                <div class="header-actions">
+                    <button id="themeToggleBtn" class="info-btn">🌓</button>
+                    <button id="aboutBtn" class="info-btn">ℹ️</button>
+                </div>
+            </div>
+            <p>Shield your digital life with quantum-grade security.</p>
+        </header>
+
+        <div class="glass-card">
+            <!-- SECTION 1: VAULT DISPLAY -->
+            <div class="card-section vault-header">
+                <div class="output-wrapper">
+                    <div class="output-container">
+                        <input type="text" id="passwordOutput" readonly placeholder="P@ssw0rd123!">
+                        <button id="copyBtn" class="icon-btn" title="Copy to Clipboard">
+                            <span id="copyIcon">📋</span>
+                        </button>
+                    </div>
+                    <!-- Integrated Strength Meter -->
+                    <div class="strength-meter">
+                        <div id="strengthBar" class="bar"></div>
+                        <div class="strength-meta">
+                            <span id="strengthText">Defense Level: Low</span>
+                            <span id="entropyVal">0 bits</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 2: SECURITY PARAMETERS -->
+            <div class="card-section parameters">
+                <div class="section-title">Security Parameters</div>
+
+                <!-- Length Config -->
+                <div class="control-row length-config">
+                    <div class="label-row">
+                        <label>Key Length</label>
+                        <span id="lengthVal" class="val-badge">16</span>
+                    </div>
+                    <input type="range" id="lengthSlider" min="8" max="64" value="16">
+                </div>
+
+                <!-- Character Types -->
+                <div class="options-grid">
+                    <label class="check-container">
+                        <input type="checkbox" id="uppercase" checked>
+                        <span class="checkmark"></span>
+                        Uppercase
+                    </label>
+                    <label class="check-container">
+                        <input type="checkbox" id="lowercase" checked>
+                        <span class="checkmark"></span>
+                        Lowercase
+                    </label>
+                    <label class="check-container">
+                        <input type="checkbox" id="numbers" checked>
+                        <span class="checkmark"></span>
+                        Numbers
+                    </label>
+                    <label class="check-container">
+                        <input type="checkbox" id="symbols" checked>
+                        <span class="checkmark"></span>
+                        Symbols
+                    </label>
+                </div>
+            </div>
+
+            <!-- SECTION 3: ACTION & HISTORY -->
+            <div class="card-section action-area">
+                <button id="generateBtn" class="main-btn">
+                    <span class="btn-icon">⚡</span>
+                    INITIATE SECURE GENERATION
+                </button>
+
+                <div class="history-section">
+                    <div class="section-title">Access Logs (History)</div>
+                    <div id="passwordHistory" class="history-list">
+                        <span class="empty-msg">No logs recorded</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-footer">
+                <span class="status-indicator">●</span> Local Encryption Active
+            </div>
+        </div>
+    </main>
+
+    <!-- About Modal -->
+    <div id="aboutModal" class="modal">
+        <div class="modal-content glass-card">
+            <span class="close-btn">&times;</span>
+            <h2>Password Generator v1.0</h2>
+            <div class="about-body">
+                <p class="dev-tag">Developed by <span>Kartik Shete</span></p>
+
+                <div class="info-section">
+                    <h3>Tech Stack</h3>
+                    <div class="tech-tags">
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>JavaScript</span>
+                        <span>Crypto API</span>
+                    </div>
+                </div>
+
+                <div class="info-section">
+                    <h3>Security Info</h3>
+                    <p>Uses the standard <code>window.crypto</code> API for high-entropy randomization. All password
+                        generation happens locally on your device.</p>
+                </div>
+
+                <div class="modal-footer">
+                    <p>© 2026 Raj Technologies | Kartik Shete</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
